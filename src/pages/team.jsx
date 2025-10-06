@@ -3,10 +3,11 @@ import React from 'react';
 const officers = [
   { name: 'Co-President', person: 'Juan Ventura-Romero', focus: 'Operations & Vision', img: '/JuanV.JPG' },
   { name: 'Co-President', person: 'Angel Flores', focus: 'Leadership & Vision', img: '/AngelFlores.jpeg' },
-  { name: 'Vice President', person: 'Steven Diaz', focus: 'Operations & Support', img: '/StevenDiaz.jpg' },
-  { name: 'Treasurer (Interim) & Secretary', person: 'Destiny Mungia', focus: 'Funding & Budget', img: '/DestinyMunguia_008.jpg' },
+  { name: 'Vice President', person: 'Steven Diaz', focus: 'Operations & Support', img: '/Stevennew.jpeg' },
+  { name: 'Treasurer', person: 'Miguel Gonzalez', focus: 'Funding & Budget', img: '/Miguel.jpeg' },
+  { name: 'Secretary', person: 'Destiny Mungia', focus: 'Records, Memberships, & Documentation', img: '/DestinyMunguia_008.jpg' },
   { name: 'ICC & CAUSE Representative', person: 'Carlos Chávez', focus: 'Representation & Campus Connection', img: '/CarlosChavez.jpeg' },
-  { name: 'Social Media Representative', person: 'TBD', focus: 'Build Teams & Portfolio', img: '/tbd.jpg' }
+  { name: 'Social Media Representative', person: 'TBD', focus: 'Online Presence & Portfolio', img: '/tbd.jpg' }
 ];
 
 const Team = () => {
