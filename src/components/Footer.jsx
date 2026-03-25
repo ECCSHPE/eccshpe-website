@@ -13,8 +13,10 @@ const Footer = ({ socials = [] }) => {
           <h3 id="site-footer-heading" className="visually-hidden">Footer</h3>
           <ul className="footer-links" role="list">
             <li><a href="/about">About</a></li>
-            <li><a href="/team">Team</a></li>
+            <li><a href="/leadershpe">LeaderSHPE</a></li>
+            <li><a href="/website-team">Website Team</a></li>
             <li><a href="/events">Events</a></li>
+            <li><a href="/gallery">Gallery</a></li>
             <li><a href="/join">Join</a></li>
           </ul>
         </nav>
