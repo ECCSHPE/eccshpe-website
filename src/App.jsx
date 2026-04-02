@@ -1,9 +1,11 @@
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Home from './pages/home';
 import About from './pages/about';
-import Team from './pages/team';
+import LeaderSHPE from './pages/leaderSHPE';
+import WebsiteTeam from './pages/websiteTeam';
 import Events from './pages/events';
 import Join from './pages/join';
+import Gallery from './pages/gallery';
 import StaggeredMenu from './components/StaggeredMenu';
 import ScrollControl from './components/ScrollControl';
 import Footer from './components/Footer';
@@ -16,15 +18,18 @@ function App() {
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
     { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
-    { label: 'Team', ariaLabel: 'View our team', link: '/team' },
+    { label: 'LeaderSHPE', ariaLabel: 'View our LeaderSHPE page', link: '/leadershpe' },
+    { label: 'Website Team', ariaLabel: 'Meet our website team', link: '/website-team' },
     { label: 'Events', ariaLabel: 'See our upcoming events', link: '/events' },
+    { label: 'Gallery', ariaLabel: 'View our gallery page', link: '/gallery' },
     { label: 'Join', ariaLabel: 'Join the chapter', link: '/join' },
   ];
 
   const socialItems = [
     { label: 'Instagram', link: 'https://www.instagram.com/shpe_elco/' },
     { label: 'GitHub', link: 'https://github.com/ECCSHPE' },
-    { label: 'LinkedIn', link: 'https://www.linkedin.com/company/society-of-hispanic-professional-engineers-el-camino-college/' }
+    { label: 'LinkedIn', link: 'https://www.linkedin.com/company/society-of-hispanic-professional-engineers-el-camino-college/' },
+    { label: 'Discord', link: 'https://discord.gg/QKNKxCbgX6' }
   ];
 
   const handleNavigate = (href) => {
@@ -49,7 +54,7 @@ function App() {
         openMenuButtonColor="#0a2540"
         changeMenuColorOnOpen={false}
         colors={["#0070C0", "#001F5B", "#72A9BE"]}
-        logoUrl="/ECCSHPE.png"
+        logoUrl="/shpeasset/ECCSHPE.png"
         accentColor="#D33A02"
         onMenuOpen={() => console.log('Menu opened')}
         onMenuClose={() => console.log('Menu closed')}
@@ -60,8 +65,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/team" element={<Team />} />
+          <Route path="/leadershpe" element={<LeaderSHPE />} />
+          <Route path="/website-team" element={<WebsiteTeam />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/join" element={<Join />} />
         </Routes>
       </main>
