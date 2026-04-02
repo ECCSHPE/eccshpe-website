@@ -1,7 +1,11 @@
 EL CAMINO COLLEGE SHPE WEBSITE
 
-For future chapter leadership and advisors, please familiarize yourself with React.js. This project is base on the following:
+For future chapter leadership and advisors, please familiarize yourself with React.js. This project is based on the following.
 
+## New developer onboarding
+
+If you are brand new to the project, start here:
+- [`docs/ONBOARDING.md`](docs/ONBOARDING.md)
 
 # React + Vite
 
