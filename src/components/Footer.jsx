@@ -6,7 +6,7 @@ const Footer = ({ socials = [] }) => {
     <footer className="site-footer enhanced-footer" aria-labelledby="site-footer-heading">
       <div className="footer-inner">
         <div className="footer-brand">
-          <img src="/ECCSHPEALT.png" alt="SHPE @ ECC logo" className="footer-logo" loading="lazy" />
+          <img src="/shpeasset/ECCSHPEALT.png" alt="SHPE @ ECC logo" className="footer-logo" loading="lazy" />
           <p className="footer-tagline">Empowering Hispanic engineers at El Camino College.</p>
         </div>
         <nav className="footer-nav" aria-label="Footer navigation">
@@ -27,9 +27,10 @@ const Footer = ({ socials = [] }) => {
             ))}
           </ul>
         </div>
-        <div className="footer-meta">
+        <div className="footer-meta"> 
           <p>© {year} SHPE @ El Camino College</p>
-          <p>Made with <span aria-hidden="true">❤</span> by Juan Ventura-Romero</p>
+          <p>Made with <span aria-hidden="true">❤</span> by Juan Ventura-Romero '26 </p>
+          <p>Maintained with <span aria-hidden="true">❤</span> by El Camino College SHPE Website Team Students</p>
         </div>
       </div>
     </footer>

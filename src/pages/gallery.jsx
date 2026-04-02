@@ -37,15 +37,14 @@ const captionStyle = {
 };
 
 const spring2026Meeting1 = [
-  { alt: 'Spring 2026 General Meeting 1 placeholder 1', caption: 'GM1 Photo Slot 1', img: '/tbd.jpg' },
-  { alt: 'Spring 2026 General Meeting 1 placeholder 2', caption: 'GM1 Photo Slot 2', img: '/tbd.jpg' },
-  { alt: 'Spring 2026 General Meeting 1 placeholder 3', caption: 'GM1 Photo Slot 3', img: '/tbd.jpg' }
+  { alt: 'Spring 2026 General Meeting 1 Photo 1', caption: 'Paper Tower Building Challenge Photo 1', img: '/general-meetings/spring-2026-general-meeting-1/General-Meeting-1-Photo-1.jpg' },
+  { alt: 'Spring 2026 General Meeting 1 Photo 2', caption: 'Paper Tower Building Challenge Photo 2', img: '/general-meetings/spring-2026-general-meeting-1/General-Meeting-1-Photo-2.jpg' },
+  { alt: 'Spring 2026 General Meeting 1 Photo 3', caption: 'Paper Tower Building Challenge Photo 3', img: '/general-meetings/spring-2026-general-meeting-1/General-Meeting-1-Photo-3.jpg' }
 ];
 
 const spring2026Meeting2 = [
-  { alt: 'Spring 2026 General Meeting 2 placeholder 1', caption: 'GM2 Photo Slot 1', img: '/tbd.jpg' },
-  { alt: 'Spring 2026 General Meeting 2 placeholder 2', caption: 'GM2 Photo Slot 2', img: '/tbd.jpg' },
-  { alt: 'Spring 2026 General Meeting 2 placeholder 3', caption: 'GM2 Photo Slot 3', img: '/tbd.jpg' }
+  { alt: 'Spring 2026 General Meeting 2 Photo 1', caption: 'Steven Diaz Presents: LinkedIn Workshop', img: '/general-meetings/spring-2026-general-meeting-2-photos/General-Meeting-2-Photo-1.jpg' },
+  { alt: 'Spring 2026 General Meeting 2 Photo 2', caption: 'General Meeting 2 Group Photo', img: '/general-meetings/spring-2026-general-meeting-2-photos/General-Meeting-2-Photo-2.JPEG' }
 ];
 
 const renderGallery = (title, images) => (
@@ -70,9 +69,8 @@ const Gallery = () => {
         <p style={{ fontSize: '1.05rem', maxWidth: 860, lineHeight: 1.55 }}>
           Club General Meetings and projects gallery. Add event photos as the semester progresses.
         </p>
-
-        {renderGallery('Spring 2026 General Meeting 1', spring2026Meeting1)}
         {renderGallery('Spring 2026 General Meeting 2', spring2026Meeting2)}
+        {renderGallery('Spring 2026 General Meeting 1', spring2026Meeting1)}
       </div>
     </div>
   );

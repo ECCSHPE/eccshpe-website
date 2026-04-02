@@ -1,20 +1,20 @@
 import React from 'react';
 
 const executiveCabinetMembers = [
-  { title: 'Co-President', person: 'Juan Ventura-Romero', focus: 'Operations, planning, and chapter vision', img: '/JuanV.JPG' },
-  { title: 'Co-President', person: 'Angel Flores', focus: 'Member development and strategic leadership', img: '/AngelFlores.jpeg' },
-  { title: 'Vice President', person: 'Steven Diaz', focus: 'Logistics, support systems, and execution', img: '/Stevennew.jpeg' },
-  { title: 'Treasurer', person: 'Miguel Gonzalez', focus: 'Budget stewardship and funding strategy', img: '/Miguel.jpeg' },
-  { title: 'Secretary', person: 'Destiny Mungia', focus: 'Documentation, records, and coordination', img: '/DestinyMunguia_008.jpg' },
-  { title: 'ICC and CAUSE Representative', person: 'Carlos Chavez', focus: 'Campus representation and partnerships', img: '/CarlosChavez.jpeg' }
+  { title: 'Co-President', person: 'Juan Ventura-Romero', focus: 'Operations, planning, and chapter vision', img: '/headshot/JuanV.JPG' },
+  { title: 'Co-President', person: 'Angel Flores', focus: 'Member development and strategic leadership', img: '/headshot/AngelFlores.jpeg' },
+  { title: 'Vice President', person: 'Steven Diaz', focus: 'Logistics, support systems, and execution', img: '/headshot/Stevennew.jpeg' },
+  { title: 'Treasurer', person: 'Miguel Gonzalez', focus: 'Budget stewardship and funding strategy', img: '/headshot/Miguel.jpeg' },
+  { title: 'Secretary', person: 'Destiny Mungia', focus: 'Documentation, records, and coordination', img: '/headshot/DestinyMunguia_008.jpg' },
+  { title: 'ICC and CAUSE Representative', person: 'Carlos Chavez', focus: 'Campus representation and partnerships', img: '/headshot/CarlosChavez.jpeg' }
 ];
 
 const leaderShpeMembers = [
-  { title: 'LEADERSHPE at Large', person: 'Alejandro Villalta', focus: 'Chapter support and cross-team collaboration', img: '/AlejandroV.jpg' },
-  { title: 'LEADERSHPE at Large', person: 'Isaac Bhoorquez', focus: 'Member engagement and program support', img: '/IsaacB.jpg' },
-  { title: 'LEADERSHPE at Large', person: 'Roberto Gomez', focus: 'Operations support and event execution', img: '/RobertoGomez.jpg' },
-  { title: 'LEADERSHPE at Large', person: 'Sebastian Artega', focus: 'Community outreach and member experience', img: '/SebastianA.jpg' },
-  { title: 'LEADERSHPE at Large', person: 'Viel Olaguera', focus: 'General chapter initiatives and support', img: '/VielO.jpg' }
+  { title: 'LEADERSHPE at Large', person: 'Alejandro Villalta', focus: 'Chapter support and cross-team collaboration', img: '/headshot/AlejandroV.jpg' },
+  { title: 'LEADERSHPE at Large', person: 'Isaac Bhoorquez', focus: 'Member engagement and program support', img: '/headshot/IsaacB.jpg' },
+  { title: 'LEADERSHPE at Large', person: 'Roberto Gomez', focus: 'Operations support and event execution', img: '/headshot/RobertoGomez.jpg' },
+  { title: 'LEADERSHPE at Large', person: 'Sebastian Artega', focus: 'Community outreach and member experience', img: '/headshot/SebastianA.jpg' },
+  { title: 'LEADERSHPE at Large', person: 'Viel Olaguera', focus: 'General chapter initiatives and support', img: '/headshot/VielO.jpg' }
 ];
 
 const sectionGridStyle = {

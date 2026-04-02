@@ -3,51 +3,42 @@ import React from 'react';
 const webTeamMembers = [
   {
     realName: 'Juan Ventura-Romero',
-    githubName: '@jrv-dev',
-    role: 'Lead Developer',
+    githubName: '@Juan-V-Tech',
+    githubUrl: 'https://github.com/Juan-V-Tech',
+    role: 'Lead Developer & Website Founder',
     keyContributions: [
       'Built the React + Vite project foundation',
       'Implemented routing and layout structure',
-      'Connected SHPE branding across pages'
+      'Management of Web Development Team'
     ],
     highlights: 'Focuses on architecture, deployment quality, and long-term maintainability.',
-    img: '/JuanV.JPG'
+    img: '/headshot/JuanV.JPG'
   },
   {
     realName: 'Steven Diaz',
-    githubName: '@stevendiaz',
-    role: 'UI and Content Engineer',
+    githubName: '@Stevenie1230',
+    githubUrl: 'https://github.com/Stevenie1230',
+    role: 'Content Manager',
     keyContributions: [
-      'Refined visuals and section hierarchy',
-      'Improved readability and page flow',
-      'Helped align content with chapter goals'
+      'Updates and ensures accuracy of all text',
+      'Uploads and manages images and media from events',
+      'Aligns content with chapter goals'
     ],
     highlights: 'Balances clean presentation with practical content updates for members.',
-    img: '/Stevennew.jpeg'
-  },
-  {
-    realName: 'Angel Flores',
-    githubName: '@angelflores',
-    role: 'Community and Feature Contributor',
-    keyContributions: [
-      'Provided user-facing feature feedback',
-      'Helped prioritize pages for members',
-      'Supported content accuracy and updates'
-    ],
-    highlights: 'Bridges chapter needs with site direction and user priorities.',
-    img: '/AngelFlores.jpeg'
+    img: '/headshot/Stevennew.jpeg'
   },
   {
     realName: 'Open Position',
     githubName: '@tbd',
-    role: 'QA and Accessibility Contributor',
+    githubUrl: 'mailto:juan_venturaromero@elcamino.edu',
+    role: 'All Roles!',
     keyContributions: [
-      'Cross-device testing and bug reporting',
-      'Accessibility and contrast checks',
-      'Release verification before deployments'
+      'Great for Resume!',
+      'Real Experience!',
+      'Industry Standard Tools'
     ],
-    highlights: 'Ensures reliability and polish before updates go live.',
-    img: '/tbd.jpg'
+    highlights: 'Join a team of student leaders and learn real skills in web development!. Click here to email Juan for more information!',
+    img: '/placeholder-assets/tbd.jpg'
   }
 ];
 
@@ -69,46 +60,74 @@ const WebsiteTeam = () => {
             gap: '1.25rem'
           }}
         >
-          {webTeamMembers.map((member) => (
-            <article
-              key={`${member.realName}-${member.role}`}
-              style={{
-                border: '1px solid #dae4f1',
-                borderRadius: 16,
-                background: 'linear-gradient(180deg, #ffffff 0%, #f8fbff 100%)',
-                padding: '1.1rem 1.1rem 1.2rem',
-                boxShadow: '0 10px 28px -18px rgba(0, 31, 91, 0.7)'
-              }}
-            >
-              <div style={{ display: 'flex', gap: '.9rem', alignItems: 'center' }}>
-                <img
-                  src={member.img}
-                  alt={member.realName}
-                  style={{ width: 88, height: 88, borderRadius: 14, objectFit: 'cover', border: '1px solid #d6deea', background: '#f4f7fb' }}
-                />
-                <div>
-                  <h2 style={{ margin: 0, fontSize: '1.08rem' }}>{member.realName}</h2>
-                  <p style={{ margin: '.2rem 0 0', fontSize: '.9rem', color: '#36517d', fontWeight: 600 }}>{member.githubName}</p>
-                  <p style={{ margin: '.3rem 0 0', fontSize: '.9rem', opacity: .8 }}>{member.role}</p>
+          {webTeamMembers.map((member) => {
+            const isMailtoLink = member.githubUrl.startsWith('mailto:');
+            const cardContent = (
+              <article
+                className="team-card"
+                style={{
+                  border: '1px solid #dae4f1',
+                  borderRadius: 16,
+                  background: 'linear-gradient(180deg, #ffffff 0%, #f8fbff 100%)',
+                  padding: '1.1rem 1.1rem 1.2rem',
+                  boxShadow: '0 10px 28px -18px rgba(0, 31, 91, 0.7)',
+                  height: '100%'
+                }}
+              >
+                <div style={{ display: 'flex', gap: '.9rem', alignItems: 'center' }}>
+                  <img
+                    src={member.img}
+                    alt={member.realName}
+                    style={{ width: 88, height: 88, borderRadius: 14, objectFit: 'cover', border: '1px solid #d6deea', background: '#f4f7fb' }}
+                  />
+                  <div>
+                    <h2 style={{ margin: 0, fontSize: '1.08rem' }}>{member.realName}</h2>
+                    <p style={{ margin: '.2rem 0 0', fontSize: '.9rem', color: '#36517d', fontWeight: 600, textDecoration: 'none' }}>
+                      {member.githubName}
+                    </p>
+                    <p style={{ margin: '.3rem 0 0', fontSize: '.9rem', opacity: .8 }}>{member.role}</p>
+                  </div>
                 </div>
-              </div>
 
-              <div style={{ marginTop: '.95rem' }}>
-                <h3 style={{ margin: 0, fontSize: '.86rem', textTransform: 'uppercase', letterSpacing: '.65px', color: '#0d2a63' }}>
-                  Key Contributions
-                </h3>
-                <ul style={{ margin: '.55rem 0 0', paddingLeft: '1.1rem', lineHeight: 1.55, fontSize: '.93rem' }}>
-                  {member.keyContributions.map((contribution) => (
-                    <li key={contribution}>{contribution}</li>
-                  ))}
-                </ul>
-              </div>
+                <div style={{ marginTop: '.95rem' }}>
+                  <h3 style={{ margin: 0, fontSize: '.86rem', textTransform: 'uppercase', letterSpacing: '.65px', color: '#0d2a63' }}>
+                    Key Contributions
+                  </h3>
+                  <ul style={{ margin: '.55rem 0 0', paddingLeft: '1.1rem', lineHeight: 1.55, fontSize: '.93rem' }}>
+                    {member.keyContributions.map((contribution) => (
+                      <li key={contribution}>{contribution}</li>
+                    ))}
+                  </ul>
+                </div>
 
-              <p style={{ margin: '.85rem 0 0', fontSize: '.9rem', lineHeight: 1.5, color: '#1f365f' }}>
-                <strong>Additional Impact:</strong> {member.highlights}
-              </p>
-            </article>
-          ))}
+                <p style={{ margin: '.85rem 0 0', fontSize: '.9rem', lineHeight: 1.5, color: '#1f365f' }}>
+                  <strong>Additional Impact:</strong> {member.highlights}
+                </p>
+              </article>
+            );
+
+            if (!member.githubUrl) {
+              return (
+                <div key={`${member.realName}-${member.role}`} style={{ display: 'block', height: '100%' }}>
+                  {cardContent}
+                </div>
+              );
+            }
+
+            return (
+              <a
+                key={`${member.realName}-${member.role}`}
+                href={member.githubUrl}
+                target={isMailtoLink ? undefined : '_blank'}
+                rel={isMailtoLink ? undefined : 'noopener noreferrer'}
+                aria-label={isMailtoLink ? `Email ${member.realName}` : `${member.realName} GitHub profile`}
+                className="team-card-link"
+                style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
+              >
+                {cardContent}
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>
