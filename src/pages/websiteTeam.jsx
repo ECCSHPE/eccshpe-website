@@ -28,6 +28,19 @@ const webTeamMembers = [
     img: '/headshot/Stevennew.jpeg'
   },
   {
+    realName: 'Fernando Miranda',
+    githubName: '@Fernandolikespancakes',
+    githubUrl: 'mailto:fernando_miranda9308@elcamino.edu',
+    role: 'All Roles!',
+    keyContributions: [
+      'New Learner!',
+      'Willing to contribute!',
+      'Emotional Support!'
+    ],
+    highlights: 'Always bringing a smile to everyone on the team!',
+    img: '/headshot/Fernando.jpg'
+  }, 
+  {
     realName: 'Open Position',
     githubName: '@tbd',
     githubUrl: 'mailto:juan_venturaromero@elcamino.edu',
@@ -39,7 +52,7 @@ const webTeamMembers = [
     ],
     highlights: 'Join a team of student leaders and learn real skills in web development!. Click here to email Juan for more information!',
     img: '/placeholder-assets/tbd.jpg'
-  }
+  },
 ];
 
 const WebsiteTeam = () => {
