@@ -42,7 +42,7 @@ const exMembersAlumni = [
     roleInShpe: 'SHPE Member',
     currentPosition: 'Mechanical Engineering at Cal Poly Pomona',
     linkedinUrl: 'https://www.linkedin.com/in/patrick-alvarez-5713b92b0/',
-    img: '/public/headshot/PatAlvar.jpg',
+    img: 'headshot/PatAlvar.png',
     isTbd: false
   },
   {
