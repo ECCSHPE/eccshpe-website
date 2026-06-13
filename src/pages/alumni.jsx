@@ -14,7 +14,7 @@ const exLeadershipAlumni = [
     graduationYear: 2026,
     roleInShpe: 'Co-President',
     currentPosition: 'Structural Engineering at UCSD',
-    linkedinUrl: 'https://www.linkedin.com/in/angel-flores/',
+    linkedinUrl: 'https://www.linkedin.com/in/angel-flores-844963216/',
     img: '/headshot/AngelFlores.jpeg'
   },
   {
@@ -22,7 +22,7 @@ const exLeadershipAlumni = [
     graduationYear: 2026,
     roleInShpe: 'Secretary',
     currentPosition: 'Computer Engineering at UCI',
-    linkedinUrl: 'https://www.linkedin.com/in/destiny-mungia/',
+    linkedinUrl: 'https://www.linkedin.com/in/destinymungia/',
     img: '/headshot/DestinyMunguia_008.jpg'
   },
   {
@@ -30,20 +30,29 @@ const exLeadershipAlumni = [
     graduationYear: 2026,
     roleInShpe: 'Treasurer',
     currentPosition: 'Structural Engineering at UCSD',
-    linkedinUrl: 'https://www.linkedin.com/in/miguel-gonzalez/',
+    linkedinUrl: 'https://www.linkedin.com/in/miguel-gonzalez-46b94934a/',
     img: '/headshot/Miguel.jpeg'
   }
 ];
 
 const exMembersAlumni = [
   {
-    name: 'TBD',
-    graduationYear: 'TBD',
+    name: 'Patrick Alvarez',
+    graduationYear: '2026',
     roleInShpe: 'SHPE Member',
-    currentPosition: 'TBD',
-    linkedinUrl: '#',
-    img: '/placeholder-assets/tbd.jpg',
-    isTbd: true
+    currentPosition: 'Mechanical Engineering at Cal Poly Pomona',
+    linkedinUrl: 'https://www.linkedin.com/in/patrick-alvarez-5713b92b0/',
+    img: '/public/headshot/Patrick.JPG',
+    isTbd: false
+  },
+  {
+    name: 'Nalupono Nagamine',
+    graduationYear: '2026',
+    roleInShpe: 'SHPE Member',
+    currentPosition: 'Eletrical Engineering at UCI',
+    linkedinUrl: 'https://www.linkedin.com/in/nalupono-nagamine-8b797a394/',
+    img: 'headshot/nalu.jpg',
+    isTbd: false
   }
 ];
 

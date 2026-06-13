@@ -36,15 +36,34 @@ const captionStyle = {
   color: '#0c2340'
 };
 
+const shpeClassOf2026 = [
+  { alt: 'Juan Ventura-Romero (Co-President)', caption: 'Juan Ventura-Romero | Co-President 2026', img: '/general-meetings/SHPE-class-of-2026/IMG_7272.jpg' },
+  { alt: 'Destiny Mungia (Secretary) & Miguel Gonzalez (Treasurer) Class of 2026', caption: 'Destiny Mungia | Secretary 2026 & Miguel Gonzalez | Treasurer 2026', img: '/general-meetings/SHPE-class-of-2026/IMG_4263.jpg' },
+  { alt: 'Nalupono Nagamine Class of 2026', caption: 'Nalupono Nagamine | Class of 2026', img: 'general-meetings/SHPE-class-of-2026/IMG_6461.jpg' }
+];
+
+const jetEngineDesign = [
+  { alt: 'Jet Engine Design Workshop Photo 1', caption: 'Jet Engine Design Workshop', img: '/general-meetings/spring-2026-Jet-Engine-Design/IMG_3698.JPG' },
+  { alt: 'Jet Engine Design Workshop Photo 2', caption: 'Jet Engine Design In Action', img: '/general-meetings/spring-2026-Jet-Engine-Design/IMG_3699.jpg' },
+  { alt: 'Jet Engine Design Workshop Photo 3', caption: 'Jet Engine Design Community', img: '/general-meetings/spring-2026-Jet-Engine-Design/IMG_3700.jpg' },
+  { alt: 'Jet Engine Design Workshop Photo 4', caption: 'Jet Engine Design Guidance', img: '/general-meetings/spring-2026-Jet-Engine-Design/IMG_3701.jpg' },
+  { alt: 'Jet Engine Design Workshop Photo 5', caption: 'Jet Engine Design Exploration', img: '/general-meetings/spring-2026-Jet-Engine-Design/IMG_3702.jpg' }
+];
+
+const uclasolesMatlab = [
+  { alt: 'UCLA SOLES X MATLAB Workshop Photo 1', caption: 'MATLAB Workshop Session 1 Group Photo', img: '/general-meetings/spring-2026-UCLA-SOLES-X-MATLAB-Workshop/IMG_2159.JPEG' },
+  { alt: 'UCLA SOLES X MATLAB Workshop Photo 2', caption: 'MATLAB Workshop Session 1 Group Collaboration', img: '/general-meetings/spring-2026-UCLA-SOLES-X-MATLAB-Workshop/IMG_3544.jpg' },
+  { alt: 'UCLA SOLES X MATLAB Workshop Photo 2', caption: 'MATLAB Workshop Session 1 UCLA SOLES Guidance', img: '/general-meetings/spring-2026-UCLA-SOLES-X-MATLAB-Workshop/IMG_3548.jpg' }
+];
+const spring2026Meeting2 = [
+  { alt: 'Spring 2026 General Meeting 2 Photo 1', caption: 'Steven Diaz Presents: LinkedIn Workshop', img: '/general-meetings/spring-2026-general-meeting-2-photos/General-Meeting-2-Photo-1.jpg' },
+  { alt: 'Spring 2026 General Meeting 2 Photo 2', caption: 'General Meeting 2 Group Photo', img: '/general-meetings/spring-2026-general-meeting-2-photos/General-Meeting-2-Photo-2.JPEG' }
+];
+
 const spring2026Meeting1 = [
   { alt: 'Spring 2026 General Meeting 1 Photo 1', caption: 'Paper Tower Building Challenge Photo 1', img: '/general-meetings/spring-2026-general-meeting-1/General-Meeting-1-Photo-1.jpg' },
   { alt: 'Spring 2026 General Meeting 1 Photo 2', caption: 'Paper Tower Building Challenge Photo 2', img: '/general-meetings/spring-2026-general-meeting-1/General-Meeting-1-Photo-2.jpg' },
   { alt: 'Spring 2026 General Meeting 1 Photo 3', caption: 'Paper Tower Building Challenge Photo 3', img: '/general-meetings/spring-2026-general-meeting-1/General-Meeting-1-Photo-3.jpg' }
-];
-
-const spring2026Meeting2 = [
-  { alt: 'Spring 2026 General Meeting 2 Photo 1', caption: 'Steven Diaz Presents: LinkedIn Workshop', img: '/general-meetings/spring-2026-general-meeting-2-photos/General-Meeting-2-Photo-1.jpg' },
-  { alt: 'Spring 2026 General Meeting 2 Photo 2', caption: 'General Meeting 2 Group Photo', img: '/general-meetings/spring-2026-general-meeting-2-photos/General-Meeting-2-Photo-2.JPEG' }
 ];
 
 const renderGallery = (title, images) => (
@@ -69,6 +88,9 @@ const Gallery = () => {
         <p style={{ fontSize: '1.05rem', maxWidth: 860, lineHeight: 1.55 }}>
           Club General Meetings and projects gallery. Add event photos as the semester progresses.
         </p>
+        {renderGallery('SHPE Class of 2026', shpeClassOf2026)}
+        {renderGallery('Jet Engine Design', jetEngineDesign)}
+        {renderGallery('UCLA SOLES X MATLAB', uclasolesMatlab)}
         {renderGallery('Spring 2026 General Meeting 2', spring2026Meeting2)}
         {renderGallery('Spring 2026 General Meeting 1', spring2026Meeting1)}
       </div>
