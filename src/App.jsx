@@ -3,6 +3,7 @@ import Home from './pages/home';
 import About from './pages/about';
 import LeaderSHPE from './pages/leaderSHPE';
 import WebsiteTeam from './pages/websiteTeam';
+import Alumni from './pages/alumni';
 import Events from './pages/events';
 import Join from './pages/join';
 import Gallery from './pages/gallery';
@@ -22,6 +23,7 @@ function App() {
     { label: 'Website Team', ariaLabel: 'Meet our website team', link: '/website-team' },
     { label: 'Events', ariaLabel: 'See our upcoming events', link: '/events' },
     { label: 'Gallery', ariaLabel: 'View our gallery page', link: '/gallery' },
+    { label: 'Alumni', ariaLabel: 'View our Alumni page', link: '/alumni' },
     { label: 'Join', ariaLabel: 'Join the chapter', link: '/join' },
   ];
 
@@ -66,6 +68,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/leadershpe" element={<LeaderSHPE />} />
+          <Route path="/alumni" element={<Alumni />} />
           <Route path="/website-team" element={<WebsiteTeam />} />
           <Route path="/events" element={<Events />} />
           <Route path="/gallery" element={<Gallery />} />

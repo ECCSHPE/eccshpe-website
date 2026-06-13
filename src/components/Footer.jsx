@@ -17,6 +17,7 @@ const Footer = ({ socials = [] }) => {
             <li><a href="/website-team">Website Team</a></li>
             <li><a href="/events">Events</a></li>
             <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/alumni">Alumni</a></li>
             <li><a href="/join">Join</a></li>
           </ul>
         </nav>

@@ -12,7 +12,7 @@ const webTeamMembers = [
       'Management of Web Development Team'
     ],
     highlights: 'Focuses on architecture, deployment quality, and long-term maintainability.',
-    img: '/headshot/JuanV.JPG'
+    img: '/headshot/Juan.jpg'
   },
   {
     realName: 'Steven Diaz',
@@ -25,7 +25,7 @@ const webTeamMembers = [
       'Aligns content with chapter goals'
     ],
     highlights: 'Balances clean presentation with practical content updates for members.',
-    img: '/headshot/Stevennew.jpeg'
+    img: '/headshot/steven.jpg'
   },
   {
     realName: 'Fernando Miranda',

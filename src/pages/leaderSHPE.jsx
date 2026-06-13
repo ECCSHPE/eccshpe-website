@@ -1,20 +1,28 @@
 import React from 'react';
 
 const executiveCabinetMembers = [
-  { title: 'Co-President', person: 'Juan Ventura-Romero', focus: 'Operations, planning, and chapter vision', img: '/headshot/JuanV.JPG' },
-  { title: 'Co-President', person: 'Angel Flores', focus: 'Member development and strategic leadership', img: '/headshot/AngelFlores.jpeg' },
-  { title: 'Vice President', person: 'Steven Diaz', focus: 'Logistics, support systems, and execution', img: '/headshot/Stevennew.jpeg' },
-  { title: 'Treasurer', person: 'Miguel Gonzalez', focus: 'Budget stewardship and funding strategy', img: '/headshot/Miguel.jpeg' },
-  { title: 'Secretary', person: 'Destiny Mungia', focus: 'Documentation, records, and coordination', img: '/headshot/DestinyMunguia_008.jpg' },
-  { title: 'ICC and CAUSE Representative', person: 'Carlos Chavez', focus: 'Campus representation and partnerships', img: '/headshot/CarlosChavez.jpeg' }
+  { title: 'Co-President', person: 'Steven Diaz', focus: 'Operations, planning, and chapter vision', img: '/headshot/steven.jpg' },
+  { title: 'Co-President', person: 'Isaac Bhoorquez', focus: 'Member development and strategic leadership', img: '/headshot/IsaacB.jpg' },
+  { title: 'Internal Vice President', person: 'Sebastian Arteaga', focus: 'Internal operations and member support', img: '/headshot/SebastianA.jpg' },
+  { title: 'External Vice President', person: 'Alejandro Villalta', focus: 'External partnerships and community engagement', img: '/headshot/AlejandroV.jpg' },
+  { title: 'Treasurer', person: 'Andrew Garcia', focus: 'Budget stewardship and funding strategy', img: '/headshot/andrew.jpg' },
+  { title: 'Secretary', person: 'Roselind Perez', focus: 'Documentation, records, and coordination', img: '/headshot/roselind.jpg' },
+  { title: 'ICC Representative', person: 'Roberto Gomez', focus: 'Campus representation and ICC partnerships', img: '/headshot/RobertoGomez.jpg' },
+  { title: 'CAUSE Representative', person: 'Fernando Miranda', focus: 'CAUSE initiatives and community outreach', img: '/headshot/Fernando.jpg' }
 ];
 
+/* LEADERSHPE AT LARGE - TEMPORARILY COMMENTED OUT FOR FUTURE USE
 const leaderShpeMembers = [
   { title: 'LEADERSHPE at Large', person: 'Alejandro Villalta', focus: 'Chapter support and cross-team collaboration', img: '/headshot/AlejandroV.jpg' },
   { title: 'LEADERSHPE at Large', person: 'Isaac Bhoorquez', focus: 'Member engagement and program support', img: '/headshot/IsaacB.jpg' },
   { title: 'LEADERSHPE at Large', person: 'Roberto Gomez', focus: 'Operations support and event execution', img: '/headshot/RobertoGomez.jpg' },
   { title: 'LEADERSHPE at Large', person: 'Sebastian Artega', focus: 'Community outreach and member experience', img: '/headshot/SebastianA.jpg' },
   { title: 'LEADERSHPE at Large', person: 'Viel Olaguera', focus: 'General chapter initiatives and support', img: '/headshot/VielO.jpg' }
+];
+*/
+
+const leaderShpeAlumni = [
+  { title: 'Alumni Web Development Lead & Mentor', person: 'Juan Ventura-Romero', focus: 'Guiding and mentoring the web development team', img: '/headshot/Juan.jpg' }
 ];
 
 const sectionGridStyle = {
@@ -83,7 +91,10 @@ const LeaderSHPE = () => {
         </p>
 
         {renderMemberSection('Executive Cabinet', executiveCabinetMembers)}
+        {/* LEADERSHPE AT LARGE SECTION - TEMPORARILY DISABLED FOR FUTURE USE
         {renderMemberSection('LeaderSHPE at Large', leaderShpeMembers)}
+        */}
+        {renderMemberSection('Supporting LeaderSHPE Alumni', leaderShpeAlumni)}
       </div>
     </div>
   );
