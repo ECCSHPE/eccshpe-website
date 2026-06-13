@@ -42,14 +42,14 @@ const exMembersAlumni = [
     roleInShpe: 'SHPE Member',
     currentPosition: 'Mechanical Engineering at Cal Poly Pomona',
     linkedinUrl: 'https://www.linkedin.com/in/patrick-alvarez-5713b92b0/',
-    img: '/public/headshot/Patrick.jpg',
+    img: '/public/headshot/PatAlvar.jpg',
     isTbd: false
   },
   {
     name: 'Nalupono Nagamine',
     graduationYear: '2026',
     roleInShpe: 'SHPE Member',
-    currentPosition: 'Eletrical Engineering at UCI',
+    currentPosition: 'Electrical Engineering at UCI',
     linkedinUrl: 'https://www.linkedin.com/in/nalupono-nagamine-8b797a394/',
     img: 'headshot/nalu.jpg',
     isTbd: false
