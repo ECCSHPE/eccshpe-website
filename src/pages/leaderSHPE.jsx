@@ -50,6 +50,8 @@ const renderMemberSection = (sectionTitle, members) => (
       {members.map((member) => (
         <article key={`${sectionTitle}-${member.title}-${member.person}`} style={memberCardStyle}>
           <img
+            loading="lazy"
+            decoding="async"
             src={member.img}
             alt={member.person}
             style={{

@@ -312,9 +312,30 @@ export const StaggeredMenu = ({
     animateText(target);
   }, [playOpen, playClose, animateIcon, animateColor, animateText, onMenuOpen, onMenuClose]);
 
-  if (process.env.NODE_ENV !== 'production') {
-    /* debug removed intentionally */
-  }
+  const closeMenu = useCallback(() => {
+    if (openRef.current) toggleMenu();
+  }, [toggleMenu]);
+
+  React.useEffect(() => {
+    if (!open) return;
+    const onKeyDown = e => {
+      if (e.key === 'Escape') {
+        closeMenu();
+        toggleBtnRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [open, closeMenu]);
+
+  const handleItemClick = (e, it) => {
+    if (!it.onClick) return;
+    // Let modified clicks (new tab/window) fall through to the browser.
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    e.preventDefault();
+    it.onClick();
+    closeMenu();
+  };
 
   return (
     <div
@@ -370,13 +391,20 @@ export const StaggeredMenu = ({
         </button>
       </header>
 
-      <aside id="staggered-menu-panel" ref={panelRef} className="staggered-menu-panel" aria-hidden={!open}>
+      <aside id="staggered-menu-panel" ref={panelRef} className="staggered-menu-panel" aria-hidden={!open} inert={!open}>
         <div className="sm-panel-inner">
           <ul className="sm-panel-list" role="list" data-numbering={displayItemNumbering || undefined}>
             {items && items.length ? (
               items.map((it, idx) => (
                 <li className="sm-panel-itemWrap" key={it.label + idx}>
-                  <a className="sm-panel-item" href={it.link} aria-label={it.ariaLabel} data-index={idx + 1}>
+                  <a
+                    className="sm-panel-item"
+                    href={it.link}
+                    aria-label={it.ariaLabel}
+                    aria-current={it.current ? 'page' : undefined}
+                    data-index={idx + 1}
+                    onClick={e => handleItemClick(e, it)}
+                  >
                     <span className="sm-panel-itemLabel">{it.label}</span>
                   </a>
                 </li>

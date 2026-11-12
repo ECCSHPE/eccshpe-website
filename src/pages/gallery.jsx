@@ -39,7 +39,7 @@ const captionStyle = {
 const shpeClassOf2026 = [
   { alt: 'Juan Ventura-Romero (Co-President)', caption: 'Juan Ventura-Romero | Co-President 2026', img: '/general-meetings/SHPE-class-of-2026/IMG_7272.jpg' },
   { alt: 'Destiny Mungia (Secretary) & Miguel Gonzalez (Treasurer) Class of 2026', caption: 'Destiny Mungia | Secretary 2026 & Miguel Gonzalez | Treasurer 2026', img: '/general-meetings/SHPE-class-of-2026/IMG_4263.jpg' },
-  { alt: 'Nalupono Nagamine Class of 2026', caption: 'Nalupono Nagamine | Class of 2026', img: 'general-meetings/SHPE-class-of-2026/IMG_6461.jpg' }
+  { alt: 'Nalupono Nagamine Class of 2026', caption: 'Nalupono Nagamine | Class of 2026', img: '/general-meetings/SHPE-class-of-2026/IMG_6461.jpg' }
 ];
 
 const jetEngineDesign = [
@@ -53,7 +53,7 @@ const jetEngineDesign = [
 const uclasolesMatlab = [
   { alt: 'UCLA SOLES X MATLAB Workshop Photo 1', caption: 'MATLAB Workshop Session 1 Group Photo', img: '/general-meetings/spring-2026-UCLA-SOLES-X-MATLAB-Workshop/IMG_2159.JPEG' },
   { alt: 'UCLA SOLES X MATLAB Workshop Photo 2', caption: 'MATLAB Workshop Session 1 Group Collaboration', img: '/general-meetings/spring-2026-UCLA-SOLES-X-MATLAB-Workshop/IMG_3544.jpg' },
-  { alt: 'UCLA SOLES X MATLAB Workshop Photo 2', caption: 'MATLAB Workshop Session 1 UCLA SOLES Guidance', img: '/general-meetings/spring-2026-UCLA-SOLES-X-MATLAB-Workshop/IMG_3548.jpg' }
+  { alt: 'UCLA SOLES X MATLAB Workshop Photo 3', caption: 'MATLAB Workshop Session 1 UCLA SOLES Guidance', img: '/general-meetings/spring-2026-UCLA-SOLES-X-MATLAB-Workshop/IMG_3548.jpg' }
 ];
 const spring2026Meeting2 = [
   { alt: 'Spring 2026 General Meeting 2 Photo 1', caption: 'Steven Diaz Presents: LinkedIn Workshop', img: '/general-meetings/spring-2026-general-meeting-2-photos/General-Meeting-2-Photo-1.jpg' },
@@ -72,7 +72,7 @@ const renderGallery = (title, images) => (
     <div style={imageGridStyle}>
       {images.map((item) => (
         <figure key={`${title}-${item.caption}`} style={imageCardStyle}>
-          <img src={item.img} alt={item.alt} style={imageStyle} />
+          <img src={item.img} alt={item.alt} style={imageStyle} loading="lazy" decoding="async" />
           <figcaption style={captionStyle}>{item.caption}</figcaption>
         </figure>
       ))}

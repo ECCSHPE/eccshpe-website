@@ -50,7 +50,7 @@ const webTeamMembers = [
       'Real Experience!',
       'Industry Standard Tools'
     ],
-    highlights: 'Join a team of student leaders and learn real skills in web development!. Click here to email Juan for more information!',
+    highlights: 'Join a team of student leaders and learn real skills in web development! Click here to email Juan for more information!',
     img: '/placeholder-assets/tbd.jpg'
   },
 ];
@@ -89,6 +89,8 @@ const WebsiteTeam = () => {
               >
                 <div style={{ display: 'flex', gap: '.9rem', alignItems: 'center' }}>
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={member.img}
                     alt={member.realName}
                     style={{ width: 88, height: 88, borderRadius: 14, objectFit: 'cover', border: '1px solid #d6deea', background: '#f4f7fb' }}

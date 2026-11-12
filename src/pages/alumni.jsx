@@ -42,7 +42,7 @@ const exMembersAlumni = [
     roleInShpe: 'SHPE Member',
     currentPosition: 'Mechanical Engineering at Cal Poly Pomona',
     linkedinUrl: 'https://www.linkedin.com/in/patrick-alvarez-5713b92b0/',
-    img: 'headshot/PatAlvar.png',
+    img: '/headshot/PatAlvar.png',
     isTbd: false
   },
   {
@@ -51,7 +51,7 @@ const exMembersAlumni = [
     roleInShpe: 'SHPE Member',
     currentPosition: 'Electrical Engineering at UCI',
     linkedinUrl: 'https://www.linkedin.com/in/nalupono-nagamine-8b797a394/',
-    img: 'headshot/nalu.jpg',
+    img: '/headshot/nalu.jpg',
     isTbd: false
   }
 ];
@@ -101,6 +101,8 @@ const AlumniCard = ({ alumnus }) => {
         onBlur={() => setIsHovered(false)}
       >
         <img
+          loading="lazy"
+          decoding="async"
           src={alumnus.img}
           alt={alumnus.name}
           style={{
@@ -113,17 +115,8 @@ const AlumniCard = ({ alumnus }) => {
           }}
         />
         <h3 style={{ margin: 0, fontSize: '1.1rem' }}>{alumnus.name}</h3>
-        <span style={{ 
-          fontSize: '.75rem', 
-          fontWeight: 600, 
-          letterSpacing: '.8px', 
-          textTransform: 'uppercase', 
-          color: '#0070C0',
-          wordBreak: 'break-word',
-          overflowWrap: 'break-word',
-          wordWrap: 'break-word'
-        }}>
-          {alumnus.linkedinUrl}
+        <span style={{ fontSize: '.85rem', fontWeight: 600, color: '#0070C0' }}>
+          View LinkedIn <span aria-hidden="true">↗</span>
         </span>
         <span style={{ fontSize: '.82rem', fontWeight: 700, letterSpacing: '.7px', textTransform: 'uppercase', color: '#666' }}>
           Class of {alumnus.graduationYear}
@@ -141,6 +134,8 @@ const AlumniCard = ({ alumnus }) => {
   return (
     <article key={`${alumnus.name}-${alumnus.graduationYear}`} style={currentStyle}>
       <img
+        loading="lazy"
+        decoding="async"
         src={alumnus.img}
         alt={alumnus.name}
         style={{
@@ -190,13 +185,9 @@ const Alumni = () => {
           Our alumni continue to make an impact in industry and academia. They led our chapter, built our community,
           and are now paving the way for future SHPE members. Interested in being added to our Alumni page?
           {' '}
-          <a
-            href="https://docs.google.com/forms/d/e/placeholder-alumni-form-url/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ fontWeight: 600 }}
-          >
-            Click here to submit your information.
+          {/* TODO: replace with the alumni Google Form link once it exists */}
+          <a href="mailto:shpe@elcamino.edu?subject=Alumni%20page" style={{ fontWeight: 600 }}>
+            Email us your information.
           </a>
         </p>
 

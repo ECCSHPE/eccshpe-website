@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = ({ socials = [] }) => {
   const year = new Date().getFullYear();
@@ -12,13 +13,13 @@ const Footer = ({ socials = [] }) => {
         <nav className="footer-nav" aria-label="Footer navigation">
           <h3 id="site-footer-heading" className="visually-hidden">Footer</h3>
           <ul className="footer-links" role="list">
-            <li><a href="/about">About</a></li>
-            <li><a href="/leadershpe">LeaderSHPE</a></li>
-            <li><a href="/website-team">Website Team</a></li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/gallery">Gallery</a></li>
-            <li><a href="/alumni">Alumni</a></li>
-            <li><a href="/join">Join</a></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/leadershpe">LeaderSHPE</Link></li>
+            <li><Link to="/website-team">Website Team</Link></li>
+            <li><Link to="/events">Events</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
+            <li><Link to="/alumni">Alumni</Link></li>
+            <li><Link to="/join">Join</Link></li>
           </ul>
         </nav>
         <div className="footer-socials" aria-label="Social media">
