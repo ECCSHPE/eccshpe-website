@@ -1,8 +1,10 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+// Animated overlay navigation menu (adapted from React Bits' StaggeredMenu).
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Link, NavLink } from 'react-router';
 import { gsap } from 'gsap';
 import './StaggeredMenu.css';
 
-export const StaggeredMenu = ({
+const StaggeredMenu = ({
   position = 'right',
   colors = ['#B19EEF', '#5227FF'],
   items = [],
@@ -10,7 +12,8 @@ export const StaggeredMenu = ({
   displaySocials = true,
   displayItemNumbering = true,
   className,
-  logoUrl = '/src/assets/logos/reactbits-gh-white.svg',
+  logoUrl,
+  logoAlt = 'Home',
   menuButtonColor = '#fff',
   openMenuButtonColor = '#fff',
   accentColor = '#5227FF',
@@ -27,7 +30,6 @@ export const StaggeredMenu = ({
   const plusVRef = useRef(null);
   const iconRef = useRef(null);
   const textInnerRef = useRef(null);
-  const textWrapRef = useRef(null);
   const [textLines, setTextLines] = useState(['Menu', 'Close']);
 
   const openTlRef = useRef(null);
@@ -37,7 +39,6 @@ export const StaggeredMenu = ({
   const colorTweenRef = useRef(null);
   const toggleBtnRef = useRef(null);
   const busyRef = useRef(false);
-  const itemEntranceTweenRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -76,7 +77,6 @@ export const StaggeredMenu = ({
       closeTweenRef.current.kill();
       closeTweenRef.current = null;
     }
-    itemEntranceTweenRef.current?.kill();
 
     const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel'));
     const numberEls = Array.from(panel.querySelectorAll('.sm-panel-list[data-numbering] .sm-panel-item'));
@@ -194,7 +194,6 @@ export const StaggeredMenu = ({
   const playClose = useCallback(() => {
     openTlRef.current?.kill();
     openTlRef.current = null;
-    itemEntranceTweenRef.current?.kill();
 
     const panel = panelRef.current;
     const layers = preLayerElsRef.current;
@@ -257,7 +256,7 @@ export const StaggeredMenu = ({
     [openMenuButtonColor, menuButtonColor, changeMenuColorOnOpen]
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (toggleBtnRef.current) {
       if (changeMenuColorOnOpen) {
         const targetColor = openRef.current ? openMenuButtonColor : menuButtonColor;
@@ -316,7 +315,7 @@ export const StaggeredMenu = ({
     if (openRef.current) toggleMenu();
   }, [toggleMenu]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!open) return;
     const onKeyDown = e => {
       if (e.key === 'Escape') {
@@ -328,12 +327,9 @@ export const StaggeredMenu = ({
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [open, closeMenu]);
 
-  const handleItemClick = (e, it) => {
-    if (!it.onClick) return;
+  const handleItemClick = (e) => {
     // Let modified clicks (new tab/window) fall through to the browser.
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-    e.preventDefault();
-    it.onClick();
     closeMenu();
   };
 
@@ -356,15 +352,10 @@ export const StaggeredMenu = ({
         })()}
       </div>
       <header className="staggered-menu-header" aria-label="Main navigation header">
-        <div className="sm-logo" aria-label="Logo">
-          <img
-            src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
-            alt="Logo"
-            className="sm-logo-img"
-            draggable={false}
-            width={110}
-            height={24}
-          />
+        <div className="sm-logo">
+          <Link to="/" className="sm-logo-link" onClick={closeMenu}>
+            <img src={logoUrl} alt={logoAlt} className="sm-logo-img" draggable={false} width={110} height={24} />
+          </Link>
         </div>
         <button
           ref={toggleBtnRef}
@@ -375,7 +366,7 @@ export const StaggeredMenu = ({
           onClick={toggleMenu}
           type="button"
         >
-          <span ref={textWrapRef} className="sm-toggle-textWrap" aria-hidden="true">
+          <span className="sm-toggle-textWrap" aria-hidden="true">
             <span ref={textInnerRef} className="sm-toggle-textInner">
               {textLines.map((l, i) => (
                 <span className="sm-toggle-line" key={i}>
@@ -396,17 +387,17 @@ export const StaggeredMenu = ({
           <ul className="sm-panel-list" role="list" data-numbering={displayItemNumbering || undefined}>
             {items && items.length ? (
               items.map((it, idx) => (
-                <li className="sm-panel-itemWrap" key={it.label + idx}>
-                  <a
+                <li className="sm-panel-itemWrap" key={it.to}>
+                  <NavLink
                     className="sm-panel-item"
-                    href={it.link}
+                    to={it.to}
+                    end
                     aria-label={it.ariaLabel}
-                    aria-current={it.current ? 'page' : undefined}
                     data-index={idx + 1}
-                    onClick={e => handleItemClick(e, it)}
+                    onClick={handleItemClick}
                   >
                     <span className="sm-panel-itemLabel">{it.label}</span>
-                  </a>
+                  </NavLink>
                 </li>
               ))
             ) : (
@@ -421,9 +412,9 @@ export const StaggeredMenu = ({
             <div className="sm-socials" aria-label="Social links">
               <h3 className="sm-socials-title">Socials</h3>
               <ul className="sm-socials-list" role="list">
-                {socialItems.map((s, i) => (
-                  <li key={s.label + i} className="sm-socials-item">
-                    <a href={s.link} target="_blank" rel="noopener noreferrer" className="sm-socials-link">
+                {socialItems.map(s => (
+                  <li key={s.href} className="sm-socials-item">
+                    <a href={s.href} target="_blank" rel="noopener noreferrer" className="sm-socials-link">
                       {s.label}
                     </a>
                   </li>

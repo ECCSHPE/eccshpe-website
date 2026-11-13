@@ -1,0 +1,15 @@
+/* Document-level defaults. Component and page styles live in app.css. */
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: 'Roboto', system-ui, sans-serif;
+  /* Allow native overscroll so the user can reverse direction easily. */
+  overscroll-behavior: auto;
+}
+
+#root {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

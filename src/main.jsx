@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import './index.css';
+import App from './App';
+import './styles/base.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Router>
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <BrowserRouter>
       <App />
       <Analytics />
       <SpeedInsights />
-    </Router>
-  </React.StrictMode>
+    </BrowserRouter>
+  </StrictMode>
 );

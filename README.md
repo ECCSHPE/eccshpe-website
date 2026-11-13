@@ -1,21 +1,44 @@
-EL CAMINO COLLEGE SHPE WEBSITE
+# SHPE @ El Camino College Website
 
-For future chapter leadership and advisors, please familiarize yourself with React.js. This project is based on the following.
+The website for the El Camino College chapter of the Society of Hispanic Professional Engineers. It's built with
+React 19, React Router 8 and Vite 8, and deployed on Vercel.
 
-## New developer onboarding
+New to the project? Start with the onboarding guide: [`docs/ONBOARDING.md`](docs/ONBOARDING.md).
 
-If you are brand new to the project, start here:
-- [`docs/ONBOARDING.md`](docs/ONBOARDING.md)
+## Quick start
 
-# React + Vite
+Requires Node.js 22.22 or newer.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```bash
+npm install
+npm run dev      # local dev server at http://localhost:5173
+npm run lint     # ESLint
+npm run build    # production build into dist/
+```
 
-Currently, two official plugins are available:
+## Where things live
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| To change...                         | Edit                                  |
+| ------------------------------------ | ------------------------------------- |
+| Menu items, social links, form links | `src/data/site.js`                    |
+| Executive Cabinet / LeaderSHPE       | `src/data/leadership.js`              |
+| Alumni                               | `src/data/alumni.js`                  |
+| Gallery albums                       | `src/data/gallery.js`                 |
+| Website Team cards                   | `src/data/websiteTeam.js`             |
+| Page text                            | `src/pages/*Page.jsx`                 |
+| Styles                               | `src/styles/app.css`                  |
+| Images                               | `public/images/` (see below)          |
 
-## Expanding the ESLint configuration
+### Images
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+public/images/
+├─ brand/         logos
+├─ headshots/     one file per person, named first-last.jpg
+├─ gallery/       one folder per event, named YYYY-term-event-name/
+└─ placeholders/
+```
+
+Use lowercase, hyphenated file names, and resize photos before you add them. Gallery photos should be about 1600 px
+on the long edge and headshots about 400 px. Vercel serves files case-sensitively, so `Photo.JPG` and `photo.jpg` are
+different files there.

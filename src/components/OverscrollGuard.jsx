@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
 
-// Delta-based boundary scroll control to avoid trapping upward scroll
-const ScrollControl = () => {
+const BOUNDARY_LEEWAY_PX = 4;
+
+// On touch devices, stop the page from rubber-banding past the top or bottom
+// edge while still letting the user reverse direction freely.
+const OverscrollGuard = () => {
   useEffect(() => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (!isMobile) return;
+    if (!isMobile) return undefined;
 
-    let lastY = null; // last touch Y position
-    const boundaryLeeway = 4; // px leeway at top/bottom
+    let lastY = null;
 
     const handleTouchStart = (e) => {
       lastY = e.touches[0].clientY;
@@ -16,26 +18,18 @@ const ScrollControl = () => {
     const handleTouchMove = (e) => {
       if (lastY == null) return;
       const currentY = e.touches[0].clientY;
-      const deltaY = currentY - lastY; // positive when finger moving down (page should scroll up)
+      const deltaY = currentY - lastY; // positive when the finger moves down (page scrolls up)
 
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const atTop = scrollTop <= BOUNDARY_LEEWAY_PX;
+      const atBottom = scrollTop >= maxScroll - BOUNDARY_LEEWAY_PX;
 
-      const atTop = scrollTop <= boundaryLeeway;
-      const atBottom = scrollTop >= maxScroll - boundaryLeeway;
-
-      // If at top and attempting to scroll further up (deltaY > 0 means pulling down)
-      if (atTop && deltaY > 0) {
-        e.preventDefault();
-        return;
-      }
-      // If at bottom and attempting to scroll further down (deltaY < 0 means pushing up)
-      if (atBottom && deltaY < 0) {
+      if ((atTop && deltaY > 0) || (atBottom && deltaY < 0)) {
         e.preventDefault();
         return;
       }
 
-      // Otherwise allow normal scroll
       lastY = currentY;
     };
 
@@ -51,4 +45,4 @@ const ScrollControl = () => {
   return null;
 };
 
-export default ScrollControl;
+export default OverscrollGuard;

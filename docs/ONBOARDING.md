@@ -7,7 +7,7 @@ This guide is written for brand-new developers (even if this is your first proje
 
 ## 1) What you are working on
 
-This is a **React + Vite** website.
+This is a **React + Vite** website (React 19, React Router 8, Vite 8).
 
 - **React** is the UI library (how pages/components are built).
 - **Vite** is the development server + build tool (runs your app locally and creates production builds).
@@ -44,7 +44,7 @@ This is a **React + Vite** website.
 
 ### B) Install Node.js (includes npm)
 
-1. Download **LTS version** from https://nodejs.org/
+1. Download the **LTS version** from https://nodejs.org/ (version 22.22 or newer is required)
 2. Install it.
 3. Confirm install:
    ```bash
@@ -169,40 +169,50 @@ git push -u origin feature/your-name-onboarding-card
 
 ```text
 eccshpe-website/
-├─ public/                # static assets (images/logos/photos)
+├─ public/
+│  └─ images/               # static images (brand, headshots, gallery, placeholders)
 ├─ src/
-│  ├─ components/         # reusable UI pieces (menu, footer, etc.)
-│  ├─ pages/              # route-level pages
-│  ├─ App.jsx             # route map + app shell
-│  ├─ main.jsx            # app entry point, router + analytics setup
-│  ├─ App.css             # global app styling
-│  └─ index.css           # base/global CSS
-├─ index.html             # root HTML with #root mount point
-├─ package.json           # scripts + dependencies
-├─ vite.config.js         # Vite config
-└─ eslint.config.js       # linting rules
+│  ├─ components/           # reusable UI pieces (menu, footer, cards, page wrapper)
+│  ├─ data/                 # site content: people, gallery albums, links
+│  ├─ pages/                # one file per route, named <Name>Page.jsx
+│  ├─ styles/
+│  │  ├─ base.css           # document-level defaults
+│  │  └─ app.css            # all page and component styles
+│  ├─ App.jsx               # app shell + route map
+│  └─ main.jsx              # entry point: router + Vercel analytics
+├─ index.html               # root HTML (title, meta tags, fonts, favicon)
+├─ package.json             # scripts + dependencies
+├─ vite.config.js           # Vite config
+└─ eslint.config.js         # linting rules
 ```
 
 ### How routing works
-- `src/main.jsx` wraps app in `BrowserRouter`.
-- `src/App.jsx` defines routes:
+- `src/main.jsx` wraps the app in `BrowserRouter` (from `react-router`).
+- `src/App.jsx` maps URLs to pages:
   - `/` Home
   - `/about`
   - `/leadershpe`
   - `/website-team`
   - `/events`
   - `/gallery`
+  - `/alumni`
   - `/join`
+  - anything else shows the "Page not found" page
+- Menu and footer links come from `NAV_ITEMS` in `src/data/site.js`. Add a page there and in `App.jsx`.
+- Use `<Link to="/page">` from `react-router` for links inside the site, not `<a href>`. A plain `<a>` reloads the whole site.
 
 ### How pages are built
-Each page file in `src/pages/` exports a React component.  
-`App.jsx` imports those components and assigns them to URL paths.
+Each file in `src/pages/` exports one page component. Most pages wrap their content in `PageSection`, which provides
+the title, the intro paragraph and the page width. The people, photos and links that pages show live in `src/data/`,
+so routine content updates rarely need you to touch JSX.
 
 ### How static images work
-Anything in `public/` can be referenced with a root path like:
+Anything in `public/` is served from the site root:
 ```jsx
-<img src="/JuanV.JPG" alt="Juan Ventura-Romero" />
+<img src="/images/headshots/juan-ventura-romero.jpg" alt="Juan Ventura-Romero" />
 ```
+Always start the path with `/`. Use lowercase, hyphenated file names, because Vercel treats `Photo.JPG` and
+`photo.jpg` as different files.
 
 ---
 
@@ -211,26 +221,26 @@ Anything in `public/` can be referenced with a root path like:
 Your task is to add your card to the **Website Team** page.
 
 ### Step 1: Add your photo
-1. Put your image in `public/`.
-2. Use a clean filename (example: `JaneDoe.jpg`).
-3. Prefer square-ish image (recommended ~500x500).
+1. Resize a square-ish photo to about 400x400.
+2. Save it as `public/images/headshots/first-last.jpg` (example: `jane-doe.jpg`).
 
-### Step 2: Update team data in `src/pages/websiteTeam.jsx`
-In `webTeamMembers`, add a new object with your info:
+### Step 2: Add yourself in `src/data/websiteTeam.js`
+Add a new object to `WEBSITE_TEAM`:
 
-```jsx
+```js
 {
-  realName: 'Jane Doe',
-  githubName: '@janedoe',
+  name: 'Jane Doe',
+  handle: '@janedoe',
+  link: 'https://github.com/janedoe',
   role: 'Frontend Contributor',
-  keyContributions: [
+  contributions: [
     'Added reusable UI updates',
     'Improved page spacing and layout',
-    'Fixed small visual bugs'
+    'Fixed small visual bugs',
   ],
   highlights: 'Passionate about creating clear, friendly interfaces for members.',
-  img: '/JaneDoe.jpg'
-}
+  img: '/images/headshots/jane-doe.jpg',
+},
 ```
 
 ### Step 3: Run checks locally
